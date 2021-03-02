@@ -22,7 +22,7 @@ jobs:
           shell: /bin/bash
           command: |
             ## download install
-            sudo apt update 
+            sudo apt-get update && sudo apt-get install -y vim-nox unar
             ## prepare for phpunit
             cd ~/project  && composer install -n --prefer-dist
             /usr/local/bin/php ./vendor/bin/phpunit --testsuite Units &&
