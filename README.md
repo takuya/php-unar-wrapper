@@ -33,10 +33,10 @@ require_once 'vendor/autoload.php';
 
 use SystemUtil\Archiver\UnArchiver;
 
-$sample_zip = __DIR__.'/sample.zip';
+$sample_zip = 'sample.zip';
 $ar = new UnArchiver();
 $ar->open($sample_zip);
-foreach( $ar->list() as $name => $entry ){
+foreach( $ar->list('*.jpg') as $name => $entry ){
   var_dump([$name,$entry->contents()]);
 }
 
