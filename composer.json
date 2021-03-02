@@ -1,0 +1,42 @@
+{
+  "name": "takuya/unar-wrapper",
+  "description": "php wrapper of UnArchiver commad line tool.",
+  "homepage": "https://github.com/takuya/unar-php-wrappeer",
+  "type": "library",
+  "license": "GPL-3.0-or-later",
+  "version": "0.1",
+  "keywords": [
+    "unar",
+    "lsar",
+    "archiver",
+    "rar",
+    "zip"
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "ext-json": "*"
+  },
+  "authors": [
+    {
+      "name": "takuya",
+      "email": "takuya.1st@gmail.com"
+    }
+  ],
+  "require": {
+    "takuya/process": "^1.3",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SystemUtil\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "files": [
+      "Helpers/helpers.php"
+    ],
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
+}
