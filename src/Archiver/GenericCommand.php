@@ -23,6 +23,7 @@ abstract  class GenericCommand {
       static::command_path();
     }
     $args = array_merge( [], [static::$command_path], ...[$args] );
+    $args = array_filter($args,'trim');
     $proc = new Process( $args );
     $proc->run();
     return [$proc->getExitCode(), $proc->getOutput(), $proc->getErrorOutput()];
