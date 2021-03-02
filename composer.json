@@ -4,7 +4,7 @@
   "homepage": "https://github.com/takuya/unar-php-wrappeer",
   "type": "library",
   "license": "GPL-3.0-or-later",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "keywords": [
     "unar",
     "lsar",
