@@ -34,6 +34,18 @@ jobs:
             mkdir /tmp/install-test
             cd /tmp/install-test
             composer require takuya/unar-wrapper
-            ## 
+            ## test install
+            mkdir sample && echo helloworld > sample/hello.txt &&
+            zip sample.zip sample/
+            echo '<?php
+              use use SystemUtil\Archiver\UnArchiver;
+              require_once "./vendor/autoload.php";
+              $ar = new UnArchiver();
+              $ar->open($sample_zip);
+              foreach( $ar->list("*.txt") as $e ){
+                echo $e->content();
+              }' > run.php
+            /usr/local/bin/php run.php
+            
 
 
