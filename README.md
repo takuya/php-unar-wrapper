@@ -15,7 +15,7 @@ To deal in same way several archive formats ( zip/tar/rar ).
 
 depends on `unar` ( Unarvhive command line tool ).
 
-zip / rar(winrar) / tar.gz  works file.
+zip / rar(winrar) / tar.gz  works fine.
 
 
 ## Installing 
