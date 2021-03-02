@@ -54,5 +54,5 @@ sudo apt install unar
 
 ## More samples. 
 
-See `samples/` in repositry.
+See [samples/](https://github.com/takuya/php-unar-wrapper/tree/master/samples) in repositry.
 
