@@ -1,6 +1,7 @@
 # php-unar-wrapper
 
-php Unarchive command line tools wrapper
+
+## Unarchive command line tools wrapper
 
 no compress, only for extract. but many formats can use.
 
