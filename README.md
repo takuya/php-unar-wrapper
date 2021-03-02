@@ -1,4 +1,6 @@
-# php-unar-wrapper
+# php-unar-wrapper 
+
+![<ORG_NAME>](https://circleci.com/gh/takuya/php-unar-wrapper.svg?style=svg)
 
 
 ## Unarchive command line tools wrapper
