@@ -40,7 +40,7 @@ class UnarCommand extends GenericCommand {
     
     $tmp = tempnam(sys_get_temp_dir(), 'php-unar-'.base64_encode(random_bytes(9)));
     @unlink($tmp);
-    $ret = self::exec($archive_file,'-D','-o',$tmpdir,$file_name);
+    $ret = self::exec($archive_file,'-D','-o',$tmp,$file_name);
     $content = file_get_contents($tmp.'/'.$file_name);
     (new Process(['rm','-rf', $tmp]))->run();
   
