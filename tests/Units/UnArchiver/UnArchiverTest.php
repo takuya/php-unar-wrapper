@@ -89,7 +89,17 @@ class UnArchiverTest  extends  TestCase {
     $ar->open($sample_zip);
     $ret = $ar->getFileContentByFileName($f_name);
     $this->assertEquals($hash,md5($ret));
-  
+    
+  }
+  public function test_unarchiver_tar_gz_extract_test() {
+    $sample = __DIR__.'/unarchiver-test-data/003-sample-img.tgz';
+    //
+    $ar = new UnArchiver();
+    $ar->open($sample);
+    $data = $ar->getFileContentAt(1);
+    $hash = md5($data);
+    $this->assertEquals('e17f6bd9e897e25a2441f0dbd7df3f32',$hash);
+    
   }
 
   

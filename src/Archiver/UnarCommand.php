@@ -5,6 +5,7 @@ namespace SystemUtil\Archiver;
 
 
 use SystemUtil\Process;
+use function PHPUnit\Framework\fileExists;
 
 class UnarCommand extends GenericCommand {
   
@@ -37,12 +38,12 @@ class UnarCommand extends GenericCommand {
     return $ret[1];
   }
   protected static function getFileContentsUsingTemp(string $archive_file, string $file_name):string {
-    
-    $tmp = tempnam(sys_get_temp_dir(), 'php-unar-'.base64_encode(random_bytes(9)));
-    @unlink($tmp);
-    $ret = self::exec($archive_file,'-o',$tmp, $file_name);
-    $content = file_get_contents($tmp.'/'.$file_name);
-    (new Process(['rm','-rf', $tmp]))->run();
+  
+    $tmpdir = tempnam(sys_get_temp_dir(), 'php-unar-'.base64_encode(random_bytes(9)));
+    @unlink($tmpdir);
+    $ret = self::exec($archive_file,'-o',$tmpdir);
+    $content = file_get_contents($tmpdir.'/'.$file_name);
+    (new Process(['rm','-rf', $tmpdir]))->run();
   
     if ($ret[0]!==0){
       throw new \RuntimeException('unar failed');
@@ -65,7 +66,7 @@ class UnarCommand extends GenericCommand {
     $list = array_filter( $list );
     array_shift( $list );
     $name = $list[0];
-    
+  
     return static::getFileContentsUsingTemp($archive_file,$name);
   }
   
